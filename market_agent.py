@@ -4,13 +4,15 @@ from datetime import datetime, timedelta
 import xml.etree.ElementTree as ET
 import re
 import json
+import os
 
 # ============== CONFIGURE THESE ==============
-GEMINI_API_KEY = ""  # Will get from GitHub Secrets
-TELEGRAM_TOKEN = ""  # Will get from GitHub Secrets  
-TELEGRAM_CHAT_ID = "" # Will get from GitHub Secrets
-"
+# Read from GitHub Secrets (environment variables)
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
 # =============================================
+
 
 class MarketAnalysisAgent:
     def __init__(self):
